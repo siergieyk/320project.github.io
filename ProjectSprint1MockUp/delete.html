@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movies Database</title>
+
+<!--Remy Sharp Shim --> 
+<!--[if lte IE 9]> 
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript" >
+</script> 
+<![endif]-->
+<style>
+    table {
+	border-collapse: collapse;
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+th {
+	text-align: center;
+	padding-right:10px;
+}
+
+tr {
+	height: 25px;
+}
+
+    td {
+        text-align: center;
+    }
+#DeleteMovieButton  {
+	text-align:center;
+	width:100px;
+	font-size:20px;
+	margin-top:25px;
+	float: right;
+	margin-right:50px;
+}
+    </style>
+
+
+
+
+
+<link href="styles.css" type="text/css" rel="stylesheet">
+
+</head>
+  
+<body>
+          
+    <div id="wrapper">
+        <header><a href="index.html"><img src="images/logo.jpg" alt="logo"></a></header>
+
+
+        <main>
+            <table>
+                <form placeholder="/placeholder.php">
+        <tr>
+    <tr>
+            <th>Select</th>
+			<th>Title</th>
+            <th>Director</th>
+            <th>Actor 1</th>
+            <th>Actor 2</th>
+			<th>Actor 3</th>
+			<th>Genre</th>
+            <th>Language</th>
+            <th>Country</th>
+            <th>Year</th>
+            <th>Budget</th>
+			<th>IMDB Rating</th>
+		</tr>   
+           		
+        <tr>
+			<td><input type="checkbox" name="slect"></td>
+            <td>The Matrix</td>
+            <td>Lana Wachowski</td>
+            <td>Gloria Foster</td>
+            <td>Keanu Reeves</td>
+            <td>Marcus Chong</td>
+            <td>Action Sci-Fi</td>
+            <td>English</td>
+            <td>USA</td>
+            <td>1999</td>
+            <td>63000000</td>
+            <td>8.7</td>
+            
+		</tr> 
+		    <!-- Third Row-->
+                
+		<tr>
+			<td><input type="checkbox" name="slect"></td>
+            <td>The Matrix Reloaded</td>
+            <td>Lana Wachowski</td>
+            <td>Steve Bastoni</td>
+            <td>Daniel Bernhardt</td>
+            <td>Helmut Bakaitis</td>
+            <td>Action Sci-Fi</td>
+            <td>English</td>
+            <td>USA</td>
+            <td>2003</td>
+            <td>150000000</td>
+            <td>7.2</td>
+		</tr> 
+			<!--Fourth Row-->
+		<tr>
+			<td><input type="checkbox" name="slect"></td>
+            <td>The Matrix Revolution</td>
+            <td>Lana Wachowski</td>
+            <td>Essie Davis</td>
+            <td>Collin Chou</td>
+            <td>Nona Gaye</td>
+            <td>Action Sci-Fi</td>
+            <td>English</td>
+            <td>Australia</td>
+            <td>2003</td>
+            <td>150000000</td>
+            <td>6.7</td>
+		</tr>
+			<!--Fifth Row-->
+
+                </form>
+</table>
+		    <!--Add movie button-->
+       	
+            <a href="edit.html"><input id= "DeleteMovieButton" type="Submit" value= " Edit "></a>
+            <input id= "DeleteMovieButton" type="Submit" value= " Delete ">
+
+        </main>
+      
+     
+<footer>
+    <ul>
+    <li>Copyright 2019 &copy;</li>
+    <li>All Rights Reserved</li>
+    <li>Web Designed by Team Awesome</li>
+    </ul>
+        </footer>
+    </div><!-- wrapper end-->
+</body>
+</html>
