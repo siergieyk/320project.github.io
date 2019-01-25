@@ -1,0 +1,232 @@
+
+ (4 pts) Review Questions: 1, 3, 4, 5, 8, 11, 13, 14, 16, 17, 18, 31, 34, 35, 36, 37, 38, 40, 43, 48, 49, 51, 52, 56
+
+#1
+A database is redesigned when an existing database is adapted to support new or changed requirements, or when two or more databases are integrated.alter
+#3
+No. Domain Integrity Constraint: a requirement that all values in a column are of the same kind.
+#4
+Relation:
+
+Functional dependency: When the value of one (set of) attribute(s) determines the value of a second (set of) attribute(s).
+
+Determinant:
+The attribute on the left side of the functional dependency.
+
+Candidate Key:
+A key that determines all of the other columns in the relation.
+
+Composite Key:
+A key that consists of two or more columns.
+
+Primary Key:
+a candidate key selected as the primary means of identifying rows in a relation.
+-There is only one primary key per relation.
+-The primary key may be a composite key.
+-The ideal primary key is short, numeric and never changes.
+
+Surrogate Key:
+An artificial column added to a relation to serve as a primary key.
+-DBMS supplied
+-Short, numeric and never changes
+-Has artificial values that are meaningless to users
+-Normally hidden in forms and reports
+
+Foreign Key:
+The primary key of one relation that is placed in another relation to form a link between the relations.
+-A foreign key can be a single column or a composite key.
+
+Referential Integrity constraint:
+A statement that limits the values of the foreign key to those already existing in the primary key values 
+in the corresponding relation:
+CallNum in ITEM_DATA must exist in CallNum in BIBLIOGRAPHY
+
+Normal form:
+Relations are categorized as a normal form based on which modification anomalies they are subject to:
+-Functional Dependency
+-Multivalued Dependency
+-Data Constraints and oddities
+
+Multivalued dependency:
+Occurs when a determinant is matched with a particular set of values instead of a single value:
+Employee -> -> Degree
+Employee -> -> Sibling
+PartKit -> -> Part
+The determinant of a multivalued dependency can never be a primary key.
+
+#5
+-Rows contain data about an entity.
+-Columns contain data about attributes of the entities.
+-All entries in a column are of the same kind.
+-Each column has a unique name.
+-Cells of the table hold a single value.
+-The order of the columns is unimportant.
+-The order of the rows is unimportant. 
+-No two rows may be identical.
+- Domain: a grouping of data that meets a specific type definition.
+o    FirstName could have a domain of names such as Wade, Peter, Natasha, etc.
+o    All values of FirstName must come from the names in the domain.
+•    Columns in different relations may have the same name.
+- Domain Integrity Constraint: a requirement that all values in a column are of the same kind.
+
+
+#8
+-Fax:
+-Home:
+
+#11
+If we know the part number, we should know how much does the part weight.
+
+#13
+Composite functional Dependency.
+We need both FirstName and LastName in order to determine the phone.
+
+#14
+Composite Determinant: a determinant of a functional dependency that consists of more than one attribute
+(StudentName, ClassName) -> (Grade)
+
+#16
+-Always put multivalued dependencies in their own relation.
+-This is known as Fourth Normal Form (4NF).
+
+#17
+Department may have more than one buyer.
+
+#18
+Each SKU has a unique buyer and department.
+
+#31
+-Domain Integrity Constraint
+-Entity Integrity Constraint
+-Referential Integrity Constraint
+
+#34
+
+#35
+2NF, 3NF, 4NF, BCNE
+
+#36
+A relation is in 2NF if all of its non-key attributes are dependent on all of the primary keys.
+
+#37
+A relation is in 3NF if it is in 2NF and has no determinants except the primary key.
+
+#38
+A relation is in BCNF if every determinant is a candidate key.
+
+#40
+4NF
+
+
+
+
+
+#43
+1. Identify every functional dependency.
+2. Identify every candidate key.
+3. If there is a functional dependency that has a determinant that is not a candidate key:
+a. Move columns of that functional dependency into a new relation.
+b.Make determinant of that functional dependency the primary key of a new relation
+c. Leave a copy of the determinant as a foreign key in the original relation.
+d.Create a referential integrity constraint between the original relation and the new relation.
+4. Repeat Step 3 until every determinant of every relation is a candidate key.
+
+
+#48
+When each student pays a different cost.
+
+#49
+-No, all the columns of determinant must be the same as the candidate key.
+
+#51
+Mulitvalubale Dependency:
+-when we match a determinant, with a specific set of values.
+
+
+#52
+Insertion Anomaly:
+-When someone gets a new sibling, have to add new rows for this person.
+
+Deletion Anomaly:
+-If we delete someone, we lose all the data :(
+#56
+Multivalued Dependency: occurs when a determinant is matched with a particular set of values:
+Employee -> -> Degree
+Employee -> -> Sibling
+PartKit -> -> Part
+The determinant of a multivalued dependency can never be a primary key.
+
+
+(3 pts) Project Questions: 58 A, B  (You're basically going to be doing a step-by-step BNCF conversion)?
+#Project Question 58 A, B.
+A1.
+(ProjectName, Date) -> EmployeeName  
+ProjectName -> EmployeeName 
+
+B1. Functional Dependencies for STAFF_MEETING
+(ProjectName, Date) -> EmployeeName 
+ProjectName -> EmployeeName 
+Candidate Keys:
+ (ProjectName, Date) 
+B2.
+PROJECTS (ProjectName, Date )
+ProjectName and Date, are candidate keys.
+
+Functional Dependencies for PROJECTS: 
+(ProjectName, Date) -> EmployeeName
+
+PROJECT_EMPLOYEE ( ProjectName, EmployeeName) 
+ProjectName is the Foreign Key.
+
+Functional Dependencies PROJECT_EMPLOYEE: 
+ProjectName -> EmployeeName 
+
+
+
+
+
+B3.
+PROJECTS (ProjectName, Date ) 
+ProjectName and Date are candidate Keys.
+
+PROJECT_EMPLYEE (ProjectName, EmployeeName) 
+ProjectName is the Foreign Key. 
+
+It seems that Project name has to be in both tables, so we have to set up a constraint (Referential Integrity) for in order to not create orphan data.
+
+(3 pts) Case Questions: Complete the Queen Anne Curiosity Shop (A, B, C)?
+
+It’s really hard to answer these questions because I don’t know how what assumptions I’m supposed to make. All the names and phone numbers are unique. Are we assuming that we are going to add new customers in the future? There is a possibility that we will have multiple people with the same phone number and names (multifamily household with one phone).
+
+Ok for the sake of this problem, let’s assume that we are not planning to add any new customers, and these are the only people that we are going to conduct business with.  The only variables that will change in the future are purchased items, and prices, and Invoice Dates.
+A1.
+Figure 3-33
+Phone -> (LastName, FirstName) Phone seems to be the most unique element here.
+LastName -> (FirstName, Phone) 
+FirstName -> (LastName, Phone) 
+(PhoneName, InvoiceDate, InvoiceItem) -> (Price, Tax, Total)
+(LastName, InvoiceDate, InvoiceItem) -> (Price, Tax, Total) 
+(FirstName, InvoiceDate, InvoiceItem) -> (Price, Tax, Total) 
+(Price) -> (Tax, Total)
+
+A2. Figure 3-34
+This table is also interesting. Let’s assume that we are not going to use any more vendors and that the vendors are never going to change their phone numbers, or add new phone lines. The prices for the items will vary, and there may be new item names.
+
+Based on the assumptions above, this seems like the most reasonable choice. Phone numbers and Vendor names are unique.
+Vendor -> Phone 
+Phone -> Vendor
+
+A little bit of a longshot. There is a chance that two vendors will sell the same item, on the same day at the same price…. ?
+(PurchaseItem, PurchasePrice, PurchaseDate) -> (Vendor, Phone) 
+B
+1. In General, Not Appropriate. Is OK, IF we are not going to add any new customers.
+2. In General, Not Appropriate. Is OK, IF we are not going to add any new customers.
+3. In General, Not Appropriate. Is OK, IF we are not going to add any new customers.
+4. In General, Not Appropriate. Is OK, IF we are not going to add any new customers.
+5. In General, Not Appropriate. Is OK, IF we are not going to add any new customers.
+6. Not Appropriate. Not sure what this is supposed to be… These tables are not related in any way…. 
+7.Not Appropriate. The author used InvoiceDate (why?) as a Primary Key. Primary Keys are supposed to be unique 
+8. Not Appropriate. The author used InvoiceDate (why?) as a Primary Key. Primary Keys are supposed to
+C
+CUSTOMER (CustomerID, LastName, FirstName, Phone, Email) 
+Sale (SaleID, CustomerID, InvoiceDate, InvoiceItem, Price, Tax, Total)
