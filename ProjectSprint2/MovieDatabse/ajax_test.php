@@ -3,7 +3,7 @@
 require('movie_head.html');   // html of head 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "Seapac@1";
 $dbname = "movie_database";
 
 // Create connection
@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>
-        <td>S</td>
+        <td>".$row["movie_id"]."</td>
         <td>".$row["title"]."</td>
         <td>".$row["director_name"]."</td>
         <td>".$row["production_year"]."</td>
@@ -65,5 +65,22 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
-require('movie_after.html'); // html bottom
-?> 
+
+?>
+<form id ="del_movie" action="del.php" method="get">
+Enter Movie_ID:<input type="text" name="m_id" required>
+<input id= "DeleteMovieButton" type="Submit" value= " Delete ">
+
+        </main>
+      
+     
+<footer>
+    <ul>
+    <li>Copyright 2019 &copy;</li>
+    <li>All Rights Reserved</li>
+    <li>Web Designed by Team</li>
+    </ul>
+        </footer>
+    </div><!-- wrapper end-->
+</body>
+</html> 
