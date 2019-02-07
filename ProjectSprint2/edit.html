@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movies Database</title>
+
+<!--Remy Sharp Shim -->
+<!--[if lte IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript" >
+</script>
+<![endif]-->
+
+<style>
+
+table {
+	border-collapse: collapse;
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+th {
+	text-align: center;
+	padding-right:10px;
+}
+
+tr {
+	height: 25px;
+}
+
+#addNewMovieButton  {
+	text-align:center;
+	width:100px;
+	font-size:20px;
+	margin-top:25px;
+	float: right;
+	margin-right:50px;
+}
+
+</style>
+
+
+<link href="styles.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <header><a href="index.html"><img src="images/logo.jpg" alt="logo"></a></header>
+
+
+        <main>
+
+        <table>
+		<form action="ajax_test.php" method ="get">
+            <!--First Row-->
+        <tr>
+			<th>Title</th>
+            <th>Director</th>
+            <th>Actor 1</th>
+            <th>Actor 2</th>
+			<th>Actor 3</th>
+			<th>Genre</th>
+            <th>Language</th>
+            <th>Country</th>
+            <th>Year</th>
+            <th>Budget</th>
+			<th>IMDB Rating</th>
+		</tr>
+            <!--Second Row-->
+        <tr>
+			<td><input type= "text" name= "title" size="10" value="Matrix"></td>
+			<td><input type= "text" name= "director" size="10" value="Lana Wachowski"></td>
+            <td><input type= "text" name= "actor1" size="10" value="Keanu Reeves"></td>
+            <td><input type= "text" name= "actor2" size="10" value="Marcus Chong"></td>
+			<td><input type= "text" name= "actor3" size="10" value="Gloria Foster"></td>
+			<td><input type= "text" name= "genre" size="10" value="Action Sci-Fi"></td>
+            <td><input type= "text" name= "language" size="10" value="English"></td>
+            <td><input type= "text" name= "content" size="10" value="USA"></td>
+            <td><input type= "text" name= "year" size="10" value="1999"></td>
+            <td><input type= "text" name= "budget" size="10" value="63000000"></td>
+			<td><input type= "text" name= "rating" size="10" value="8.7"></td>
+		</tr>
+		    <!-- Third Row-->
+
+
+        </table>
+		    <!--Add movie button-->
+       	<input id= "addNewMovieButton" type="Submit" value= " EDIT ">
+		</form>
+        </main>
+
+
+<footer>
+    <ul>
+    <li>Copyright 2019 &copy;</li>
+    <li>All Rights Reserved</li>
+    <li>Web Designed by Team Awesome</li>
+    </ul>
+        </footer>
+    </div><!-- wrapper end-->
+</body>
+</html>

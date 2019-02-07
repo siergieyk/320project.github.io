@@ -1,9 +1,9 @@
- 
+
  <?php
-require('movie_head.html');   // html of head 
+require('movie_head.html');   // html of head
 $servername = "localhost";
 $username = "root";
-$password = "Seapac@1";
+$password = "root";
 $dbname = "movie_database";
 
 // Create connection
@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $production_year = $_GET["production_year"];
 $title = $_GET["title"];
@@ -21,10 +21,10 @@ $genre = $_GET["genre"];
 $language = $_GET["language"];
 $imdb_score = $_GET["imdb_score"];
 
-$presql = 
-"SELECT * 
-FROM movies 
-WHERE production_year LIKE '%$production_year%' 
+$presql =
+"SELECT *
+FROM movies
+WHERE production_year LIKE '%$production_year%'
 AND title LIKE '%$title%'
 AND director_name LIKE '%$director%'
 AND actor_1_name LIKE '%$actor%'
@@ -72,8 +72,8 @@ Enter Movie_ID:<input type="text" name="m_id" required>
 <input id= "DeleteMovieButton" type="Submit" value= " Delete ">
 
         </main>
-      
-     
+
+
 <footer>
     <ul>
     <li>Copyright 2019 &copy;</li>
@@ -83,4 +83,4 @@ Enter Movie_ID:<input type="text" name="m_id" required>
         </footer>
     </div><!-- wrapper end-->
 </body>
-</html> 
+</html>
