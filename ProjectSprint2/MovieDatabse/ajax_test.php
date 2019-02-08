@@ -1,6 +1,6 @@
- 
+
  <?php
-require('movie_head.html');   // html of head 
+require('movie_head.html');   // html of head
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $production_year = $_GET["production_year"];
 $title = $_GET["title"];
@@ -21,10 +21,10 @@ $genre = $_GET["genre"];
 $language = $_GET["language"];
 $imdb_score = $_GET["imdb_score"];
 
-$presql = 
-"SELECT * 
-FROM movies 
-WHERE production_year LIKE '%$production_year%' 
+$presql =
+"SELECT *
+FROM movies
+WHERE production_year LIKE '%$production_year%'
 AND title LIKE '%$title%'
 AND director_name LIKE '%$director%'
 AND actor_1_name LIKE '%$actor%'
@@ -48,9 +48,14 @@ echo"<tr><th>select</th>
         <th>imdb_score</th></tr>";
 if ($result->num_rows > 0) {
     // output data of each row
+
     while($row = $result->fetch_assoc()) {
-        echo "<tr>
-        <td>S</td>
+
+        echo "<tr>";
+        ?>
+        <td><input type="radio" name="slect"></td>
+        <?php
+        echo "
         <td>".$row["title"]."</td>
         <td>".$row["director_name"]."</td>
         <td>".$row["production_year"]."</td>
@@ -66,4 +71,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 require('movie_after.html'); // html bottom
-?> 
+?>
