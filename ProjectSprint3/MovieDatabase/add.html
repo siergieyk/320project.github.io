@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movies Database</title>
+
+<!--Remy Sharp Shim --> 
+<!--[if lte IE 9]> 
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript" >
+</script> 
+<![endif]-->
+
+<style>
+
+table {
+	border-collapse: collapse;
+	width: 95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+th {
+	text-align: center;
+	padding-right:10px;
+}
+
+tr {
+	height: 25px;
+}
+
+#addNewMovieButton  {
+	text-align:center;
+	width:100px;
+	font-size:20px;
+	margin-top:25px;
+	float: right;
+	margin-right:50px;
+}
+
+</style>
+
+
+<link href="styles.css" type="text/css" rel="stylesheet">
+
+</head>
+  
+<body>
+          
+    <div id="wrapper">
+        <header><a href="index.html"><img src="images/logo.jpg" alt="logo"></a></header>
+
+
+        <main>
+
+        <table>
+		<form id="addForm" action="add.php" method="get">
+            <!--First Row-->
+        <tr>
+			<th>Title</th>
+            <th>Director</th>
+            <th>Actor 1</th>
+            <th>Actor 2</th>
+			<th>Actor 3</th>
+			<th>Genre</th>
+            <th>Language</th>
+            <th>Content</th>
+            <th>Year</th>
+            <th>Budget</th>
+			<th>IMDB Rating</th>
+		</tr>   
+            <!--Second Row-->		
+        <tr>
+			<td><input type= "text" name= "title" size="8"</td>
+			<td><input type= "text" name= "director" size="8"</td>
+            <td><input type= "text" name= "actor1" size="8"</td>
+            <td><input type= "text" name= "actor2" size="8"</td>
+			<td><input type= "text" name= "actor3" size="8"</td>
+			<td><input type= "text" name= "genre" size="8"</td>
+            <td><input type= "text" name= "language" size="8"</td>
+            <td><input type= "text" name= "content" size="8"</td>
+            <td><input type= "text" name= "year" size="8"</td>
+            <td><input type= "text" name= "budget" size="8"</td>
+			<td><input type= "text" name= "rating" size="8"</td>
+		</tr> 
+		    <!-- Third Row-->
+		<tr>
+			<td><input type= "text" name= "1title" size="8"</td>
+			<td><input type= "text" name= "1director" size="8"</td>
+            <td><input type= "text" name= "1actor1" size="8"</td>
+            <td><input type= "text" name= "1actor2" size="8"</td>
+			<td><input type= "text" name= "1actor3" size="8"</td>
+			<td><input type= "text" name= "1genre" size="8"</td>
+            <td><input type= "text" name= "1language" size="8"</td>
+            <td><input type= "text" name= "1content" size="8"</td>
+            <td><input type= "text" name= "1year" size="8"</td>
+            <td><input type= "text" name= "1budget" size="8"</td>
+			<td><input type= "text" name= "1rating" size="8"</td>
+		</tr> 
+			<!--Fourth Row-->
+		<tr>
+			<td><input type= "text" name= "2title" size="8"</td>
+			<td><input type= "text" name= "2director" size="8"</td>
+            <td><input type= "text" name= "2actor1" size="8"</td>
+            <td><input type= "text" name= "2actor2" size="8"</td>
+			<td><input type= "text" name= "2actor3" size="8"</td>
+			<td><input type= "text" name= "2genre" size="8"</td>
+            <td><input type= "text" name= "2language" size="8"</td>
+            <td><input type= "text" name= "2content" size="8"</td>
+            <td><input type= "text" name= "2year" size="8"</td>
+            <td><input type= "text" name= "2budget" size="8"</td>
+			<td><input type= "text" name= "2rating" size="8"</td>
+		</tr>
+			<!--Fifth Row-->
+		<tr>
+			<td><input type= "text" name= "3title" size="8"</td>
+			<td><input type= "text" name= "3director" size="8"</td>
+            <td><input type= "text" name= "3actor1" size="8"</td>
+            <td><input type= "text" name= "3actor2" size="8"</td>
+			<td><input type= "text" name= "3actor3" size="8"</td>
+			<td><input type= "text" name= "3genre" size="8"</td>
+            <td><input type= "text" name= "3language" size="8"</td>
+            <td><input type= "text" name= "3content" size="8"</td>
+            <td><input type= "text" name= "3year" size="8"</td>
+            <td><input type= "text" name= "3budget" size="8"</td>
+			<td><input type= "text" name= "3rating" size="8"</td>
+		</tr>
+	
+        </table>
+		    <!--Add movie button-->
+       	<input id= "addNewMovieButton" type="Submit" value= " ADD ">
+		</form>		
+        </main>
+      
+     
+        <footer>
+    <ul>
+    <li>Copyright 2019 &copy;</li>
+    <li>All Rights Reserved</li>
+    <li>Web Designed by Team</li>
+    <li><a href="contact.html">Contact</a></li>    
+    </ul>
+        </footer>
+    </div><!-- wrapper end-->
+</body>
+</html>
